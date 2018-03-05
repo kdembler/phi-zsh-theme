@@ -28,8 +28,7 @@ function get_right_prompt() {
     fi
 }
 
-local USER_INFO = "%{$fg_bold[$USERCOLOR]%}%n"
-if [[ "$USER" == "$DEFAULT_USER" ]]; then USER_INFO = ""; fi
+if [[ "$USER" == "$DEFAULT_USER" ]]; then USER_INFO=""; else USER_INFO="%{$fg_bold[$USERCOLOR]%}%n"; fi
 
 PROMPT='
 ${PHI}\
