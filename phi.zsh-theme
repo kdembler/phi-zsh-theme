@@ -28,9 +28,12 @@ function get_right_prompt() {
     fi
 }
 
+local USER_INFO = "%{$fg_bold[$USERCOLOR]%}%n"
+if [[ "$USER" == "$DEFAULT_USER" ]]; then USER_INFO = ""; fi
+
 PROMPT='
 ${PHI}\
- %{$fg_bold[$USERCOLOR]%}%n\
+ $USER_INFO\
  %{$fg_no_bold[magenta]%}[%3~]\
  $(check_git_prompt_info)\
 %{$reset_color%}'
